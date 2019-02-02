@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+  background-color: #8080805e;
+}
+
+.max-height {
+  height: -webkit-fill-available;
+}
+
+.login-card {
+  width: 50vw;
+  /* height: 50vh;
+    max-height: 300px; */
+  max-width: 350px;
+}
+
+.card-div {
+  height: 80px;
+}
+
+.avatar-img img {
+    height: 50px;
+}

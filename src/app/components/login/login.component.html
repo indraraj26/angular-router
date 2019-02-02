@@ -1,0 +1,28 @@
+<div class="max-height">
+    <div fxLayout="column" fxLayoutAlign="center center" class="max-height">
+        <mat-card class="login-card">
+            <div fxLayout="column" fxLayoutAlign="space-evenly none">
+                <div fxFlex="100" fxLayout="row" fxLayoutAlign="center none">
+                    <div class="avatar-img">
+                        <img src="../../../assets/img/avatar.svg" alt="avatar">
+                    </div>
+                </div>
+                <form [formGroup]="loginForm">
+                    <div class="card-div">
+                        <mat-form-field fxFlex="100" for>
+                            <input matInput placeholder="Email ID" formControlName="email">
+                        </mat-form-field>
+                    </div>
+                    <div class="card-div">
+                        <mat-form-field fxFlex="100">
+                            <input matInput placeholder="Password" formControlName="password">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="end none">
+                        <button mat-raised-button color="primary" (click)="login()">Signin</button>
+                    </div>
+                </form>
+            </div>
+        </mat-card>
+    </div>
+</div>
