@@ -16,16 +16,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
+import { CustomerListComponent } from './components/customerlist/customerlist.component';
 
 import { AuthenticationService } from './service/authentication.service';
 import { AuthGuardService } from './service/auth-gaurd.service';
 import { LoginService } from './service/login.service';
+import { RouterResolver } from './service/router.resolver';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CustomerDetailsComponent
+    CustomerDetailsComponent,
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { LoginService } from './service/login.service';
   ],
   providers: [LoginService,
     AuthGuardService,
-    AuthenticationService],
+    AuthenticationService,
+    RouterResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

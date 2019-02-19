@@ -29,7 +29,7 @@ export class LoginComponent {
         this.loginService.login(this.loginForm.value).subscribe((data: any) => {
             if (data && data.token) {
                 this.authenticationService.saveToken(data.token);
-                this.router.navigateByUrl('/customer-details');
+                this.router.navigateByUrl('/customer');
             }
         });
     }

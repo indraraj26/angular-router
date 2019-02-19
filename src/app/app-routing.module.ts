@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
+import { CustomerListComponent } from './components/customerlist/customerlist.component';
 import { AuthGuardService } from './service/auth-gaurd.service';
+import { RouterResolver } from './service/router.resolver';
 
 const routes: Routes = [
   {
@@ -15,9 +17,27 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'customer-details',
-    component: CustomerDetailsComponent,
-    canActivate: [AuthGuardService]
+    path: 'customer',
+    canActivate: [AuthGuardService],
+    children: [{
+      path: '',
+      component: CustomerListComponent,
+      canActivate: [AuthGuardService],
+      resolve: { data: RouterResolver }
+    },
+    {
+      path: 'list',
+      component: CustomerListComponent,
+      canActivate: [AuthGuardService],
+      resolve: { data: RouterResolver }
+    },
+    {
+      path: 'details/:id',
+      component: CustomerDetailsComponent,
+      canActivate: [AuthGuardService],
+      resolve: { data: RouterResolver }
+    }
+    ]
   }
 ];
 

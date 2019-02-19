@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-    selector: 'app-customer-details',
-    templateUrl: 'customer-details.component.html'
+    selector: 'app-customerlist',
+    templateUrl: './customerlist.component.html'
 })
 
-export class CustomerDetailsComponent {
+export class CustomerListComponent {
     constructor(private route: ActivatedRoute) {
         this.route.data.subscribe((data) => {
             console.log('Data-------->>>', data);
